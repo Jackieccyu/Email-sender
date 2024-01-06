@@ -35,7 +35,7 @@ Run the Application:
 
 # How To Test on local
 ```bash
-npm app.js
+node app.js
 ```
 The application will run on localhost:3000.
 
