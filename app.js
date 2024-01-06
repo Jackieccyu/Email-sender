@@ -3,20 +3,22 @@ const nodemailer = require('nodemailer');
 const app = express();
 app.use(express.json());
 
+require('dotenv').config();
+
 // Configure your SMTP transporter
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // for example, use Gmail
-  auth: {
-    user: 'your-email@gmail.com', // your email
-    pass: 'your-password' // your email password or app password
-  }
-});
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
 
 app.post('/emails', (req, res) => {
   const { to, subject, body } = req.body;
 
   const mailOptions = {
-    from: 'your-email@gmail.com', // sender address
+    from: 'cian79421@gmail.com', // sender address
     to: to,
     subject: subject,
     text: body
