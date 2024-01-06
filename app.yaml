@@ -1,0 +1,10 @@
+runtime: nodejs20
+env: standard
+
+entrypoint: node app.js
+
+env_variables:
+  EMAIL_USER: cian79421@gmail.com
+  EMAIL_PASS: wenf lpkq mgxg ysqb
+
+
